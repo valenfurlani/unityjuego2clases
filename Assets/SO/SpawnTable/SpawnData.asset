@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6091d746f15f6ad4482bf50da2e657b7, type: 3}
+  m_Name: SpawnData
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnTableSO
+  possibleMonsters:
+  - {fileID: 11400000, guid: 164d1b19a08941443b83a141b1dacc58, type: 2}
+  - {fileID: 11400000, guid: 4c7c1f7a29b6738489b955f423d58746, type: 2}
+  - {fileID: 11400000, guid: 28ba511a5bbba674bb0a0354e4b473a4, type: 2}
