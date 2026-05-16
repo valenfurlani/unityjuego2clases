@@ -11280,7 +11280,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_coasts_504
+      name: 1
       rect:
         serializedVersion: 2
         x: 0
@@ -11346,7 +11346,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_coasts_507
+      name: 2
       rect:
         serializedVersion: 2
         x: 64
@@ -11412,7 +11412,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_coasts_510
+      name: 3
       rect:
         serializedVersion: 2
         x: 128
@@ -11478,7 +11478,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_coasts_513
+      name: 4
       rect:
         serializedVersion: 2
         x: 192
@@ -11566,7 +11566,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_coasts_517
+      name: 5
       rect:
         serializedVersion: 2
         x: 256
@@ -11654,7 +11654,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water_coasts_521
+      name: 6
       rect:
         serializedVersion: 2
         x: 320
@@ -16905,6 +16905,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      1: 1301355828
+      2: 193315750
+      3: -676811015
+      4: 1511989325
+      5: -230113581
+      6: -1498204532
       Water_coasts_0: -4889110880608369945
       Water_coasts_1: 7286072917376454345
       Water_coasts_10: -8610922282053433029
@@ -17356,26 +17362,20 @@ TextureImporter:
       Water_coasts_501: 1869517434
       Water_coasts_502: -670797451
       Water_coasts_503: 1038164929
-      Water_coasts_504: 1301355828
       Water_coasts_505: 670943062
       Water_coasts_506: -13984076
-      Water_coasts_507: 193315750
       Water_coasts_508: 1623490008
       Water_coasts_509: -1325682465
       Water_coasts_51: -365272347
-      Water_coasts_510: -676811015
       Water_coasts_511: 1679094781
       Water_coasts_512: -2115234087
-      Water_coasts_513: 1511989325
       Water_coasts_514: -1078185689
       Water_coasts_515: 1990289775
       Water_coasts_516: -197821970
-      Water_coasts_517: -230113581
       Water_coasts_518: -1009348995
       Water_coasts_519: -1417946478
       Water_coasts_52: 2075095278
       Water_coasts_520: -1407686277
-      Water_coasts_521: -1498204532
       Water_coasts_522: -2096160477
       Water_coasts_523: 544936801
       Water_coasts_524: -280979336
