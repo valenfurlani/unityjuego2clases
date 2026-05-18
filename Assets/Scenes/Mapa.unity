@@ -339,6 +339,9 @@ GameObject:
   m_Component:
   - component: {fileID: 34123206}
   - component: {fileID: 34123205}
+  - component: {fileID: 34123209}
+  - component: {fileID: 34123208}
+  - component: {fileID: 34123207}
   m_Layer: 0
   m_Name: 1_0
   m_TagString: Untagged
@@ -420,12 +423,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &63785535
 MonoBehaviour:
+=======
+--- !u!70 &34123207
+CapsuleCollider2D:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1256,10 +1265,47 @@ Sprite:
   m_SpriteID: 
 --- !u!213 &395986171
 Sprite:
+=======
+  m_GameObject: {fileID: 34123204}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.05561769, y: -0.046023488}
+  m_Size: {x: 0.75900006, y: 1.7868116}
+  m_Direction: 0
+--- !u!50 &34123208
+Rigidbody2D:
+  serializedVersion: 5
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_Name: 
   m_Rect:
     serializedVersion: 2
@@ -1465,11 +1511,35 @@ Sprite:
   m_ScriptableObjects: []
   m_SpriteID: 
 --- !u!114 &402324630
+=======
+  m_GameObject: {fileID: 34123204}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!114 &34123209
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1498,6 +1568,14 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+=======
+  m_GameObject: {fileID: 34123204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e4e10dfcbc51f4abfa82da32ebf2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+>>>>>>> Stashed changes
 --- !u!1 &438810175
 GameObject:
   m_ObjectHideFlags: 0
@@ -38375,12 +38453,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+<<<<<<< Updated upstream
 --- !u!213 &873054956
 Sprite:
+=======
+--- !u!1 &1101633171
+GameObject:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_Name: 
   m_Rect:
     serializedVersion: 2
@@ -38586,11 +38670,28 @@ Sprite:
   m_ScriptableObjects: []
   m_SpriteID: 
 --- !u!114 &1042582333
+=======
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1101633175}
+  - component: {fileID: 1101633174}
+  - component: {fileID: 1101633173}
+  - component: {fileID: 1101633172}
+  m_Layer: 0
+  m_Name: Systems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1101633172
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -38620,11 +38721,23 @@ MonoBehaviour:
   m_Flags: 3
   m_ColliderType: 1
 --- !u!114 &1156544709
+=======
+  m_GameObject: {fileID: 1101633171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2d6f7dc2f6d8544a7004feb53f22b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawnerFactory
+  fearManager: {fileID: 1101633174}
+  spawnTable: {fileID: 11400000, guid: 2fa6e2a75baeb7248a621033a3982f78, type: 2}
+--- !u!114 &1101633173
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -38654,11 +38767,22 @@ MonoBehaviour:
   m_Flags: 3
   m_ColliderType: 1
 --- !u!114 &1168346243
+=======
+  m_GameObject: {fileID: 1101633171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510d3a639097d014d9c382ab3eb05136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundSystem
+  fearManager: {fileID: 1101633174}
+--- !u!114 &1101633174
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -38689,10 +38813,22 @@ MonoBehaviour:
   m_ColliderType: 1
 --- !u!114 &1191142766
 MonoBehaviour:
+=======
+  m_GameObject: {fileID: 1101633171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ac1fd62ac1cdf4d8373b46408a2726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FearManager
+  currentFearLevel: 0
+--- !u!4 &1101633175
+Transform:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -40049,6 +40185,17 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
+=======
+  m_GameObject: {fileID: 1101633171}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1793142360
 GameObject:
   m_ObjectHideFlags: 0
@@ -57637,3 +57784,4 @@ SceneRoots:
   - {fileID: 646972120}
   - {fileID: 1944994038}
   - {fileID: 34123206}
+  - {fileID: 1101633175}
