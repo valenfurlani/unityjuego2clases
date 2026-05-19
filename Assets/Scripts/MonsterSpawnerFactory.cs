@@ -17,10 +17,19 @@ public class MonsterSpawnerFactory : MonoBehaviour, IMonsterFactory, IFearObserv
     public GameObject CreateMonster(int fearLevel, Vector3 position)
     {
         MonsterDataSO data = spawnTable.GetRandomMonsterForFear(fearLevel);
+    
         if (data != null && data.prefab != null)
         {
+            // 1. Instanciar el clon del enemigo en la escena
             GameObject instance = Instantiate(data.prefab, position, Quaternion.identity);
-            // Setup monster logic with data
+        
+            // 2. Obtener el controlador del enemigo inyectarle sus datos correspondientes
+            EnemyController controller = instance.GetComponent<EnemyController>();
+            if (controller != null)
+            {
+                controller.Initialize(data);
+            }
+        
             return instance;
         }
         return null;
