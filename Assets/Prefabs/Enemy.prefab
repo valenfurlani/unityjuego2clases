@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1180099070290882559}
   - component: {fileID: 6395381793581121813}
   - component: {fileID: 487276031548106577}
+  - component: {fileID: 6482750435967853577}
+  - component: {fileID: 819293371999830163}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -86,7 +88,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: e364e435eccfbd84ab3097539cc7c5e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17297e90aa54a624db806c9cce012681, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,8 +132,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.10856867, y: -1.7009101}
-  m_Size: {x: 0.8344641, y: 1.4858751}
+  m_Offset: {x: -0.061530113, y: -0.54944134}
+  m_Size: {x: 1.0314198, y: 1.0314198}
   m_Direction: 0
 --- !u!195 &4034787400098890095
 NavMeshAgent:
@@ -141,18 +143,18 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3939792567453200390}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.56
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.57
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 71
-  m_AngularSpeed: 120.03
+  m_AngularSpeed: 120.21
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.49
-  m_BaseOffset: 2.45
+  m_Height: 1.31
+  m_BaseOffset: 1.11
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1180099070290882559
@@ -171,6 +173,7 @@ MonoBehaviour:
   attackCooldown: 2
   spawnDuration: 1.5
   attackDuration: 0.6
+  fearDealtOnHit: 15
 --- !u!114 &6395381793581121813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,3 +208,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6482750435967853577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3939792567453200390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3d077b88ea8194ab3b0dab86bd0f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!50 &819293371999830163
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3939792567453200390}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
