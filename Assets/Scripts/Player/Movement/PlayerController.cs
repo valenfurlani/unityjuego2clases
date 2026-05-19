@@ -7,29 +7,19 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private Vector2 inputDirection;
     private PlayerShooter playerShooter;
+    private PlayerAnimator playerAnimator; // Nueva referencia al sistema visual
 
     void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
         playerShooter = GetComponent<PlayerShooter>();
         playerInput = GetComponent<PlayerInput>();
+        playerAnimator = GetComponent<PlayerAnimator>(); // Obtenemos la referencia
     }
     
     void Start()
     {
-        if (playerInput != null && playerInput.actions != null)
-        {
-            foreach (var map in playerInput.actions.actionMaps)
-            {
-                map.Disable();
-            }
-            
-            var playerMap = playerInput.actions.FindActionMap("Player");
-            if (playerMap != null)
-            {
-                playerMap.Enable();
-            }
-        }
+        // ... Mantén tu lógica original de Input Action Maps aquí ...
     }
     
     public void OnMove(InputAction.CallbackContext context)
@@ -39,18 +29,20 @@ public class PlayerController : MonoBehaviour
     
     public void OnFire(InputAction.CallbackContext context)
     {
-        // Solo disparamos una vez cuando el botón se presiona (started)
         if (context.started && playerShooter != null)
         {
-            // 1. Obtenemos la posición del mouse en píxeles (pantalla)
             Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-
-            // 2. La transformamos a la posición real dentro del mundo 2D usando la Cámara
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
-            mouseWorldPosition.z = 0f; // Nos aseguramos de mantener el plano 2D
+            mouseWorldPosition.z = 0f;
 
-            // 3. Le ordenamos al PlayerShooter que dispare hacia esa posición
+            // 1. Lógica de Combate: Disparar proyectil
             playerShooter.ShootTowards(mouseWorldPosition);
+
+            // 2. Lógica Visual: Reproducir animación de ataque
+            if (playerAnimator != null)
+            {
+                playerAnimator.TriggerAttackAnimation();
+            }
         }
     }
 
