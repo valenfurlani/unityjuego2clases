@@ -16,7 +16,7 @@ MonoBehaviour:
   health: 40
   speed: 90
   damage: 30
-  prefab: {fileID: 0}
+  prefab: {fileID: 5398163655935206747, guid: 4f3e6a2dcaecfc24ab937d992a3cd959, type: 3}
   deathSound: {fileID: 0}
   minFearRequired: 25
-  spawnWeight: 0
+  spawnWeight: 1
