@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4034787400098890095}
   - component: {fileID: 1180099070290882559}
   - component: {fileID: 6395381793581121813}
+  - component: {fileID: 487276031548106577}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -141,17 +142,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 3939792567453200390}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.45
+  m_Radius: 0.56
   m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 45
-  m_AngularSpeed: 120
+  avoidancePriority: 71
+  m_AngularSpeed: 120.03
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.93
-  m_BaseOffset: 4
+  m_Height: 1.49
+  m_BaseOffset: 2.45
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1180099070290882559
@@ -166,7 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463a2fb919ef48a4493d42e3f37b4bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPathfinder
-  baseSpeed: 3.5
+  attackRange: 1.5
+  attackCooldown: 2
+  spawnDuration: 1.5
+  attackDuration: 0.6
 --- !u!114 &6395381793581121813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,3 +183,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e39f6090724e4a4a8aadeb042afa2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Extensions.AgentOverride2d
+--- !u!95 &487276031548106577
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3939792567453200390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
