@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca77db30d50978f41af3f2fcbe8305cc, type: 3}
   m_Name: CameraConfig
   m_EditorClassIdentifier: Assembly-CSharp::CameraConfigSO
-  rangeConfigs: []
+  rangeConfigs:
+  - shakeForce: 0
+    shakeInterval: 0
+    zoomOffset: 0
+  - shakeForce: 0.2
+    shakeInterval: 1
+    zoomOffset: -1
+  - shakeForce: 0.6
+    shakeInterval: 1
+    zoomOffset: -2
+  - shakeForce: 1
+    shakeInterval: 0.5
+    zoomOffset: -4

@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ff5c35569865e49bc2589051633a5a, type: 3}
   m_Name: NewPostProcessingConfig
   m_EditorClassIdentifier: Assembly-CSharp::PostProcessingConfigSO
-  rangeConfigs: []
+  rangeConfigs:
+  - aberrationIntensity: 0
+    saturation: 0
+    contrast: 0
+  - aberrationIntensity: 0.3
+    saturation: -20
+    contrast: 10
+  - aberrationIntensity: 0.6
+    saturation: -50
+    contrast: 25
+  - aberrationIntensity: 1
+    saturation: -80
+    contrast: 40

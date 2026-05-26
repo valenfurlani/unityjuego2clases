@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915944ee768852c45a088fad5cbe73be, type: 3}
   m_Name: FearConfig
   m_EditorClassIdentifier: Assembly-CSharp::FearConfigSO
-  ranges: []
+  ranges:
+  - minFear: 0
+    maxFear: 25
+  - minFear: 26
+    maxFear: 50
+  - minFear: 51
+    maxFear: 75
+  - minFear: 76
+    maxFear: 100
