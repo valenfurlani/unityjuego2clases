@@ -19,7 +19,6 @@ public class OrbProjectile : MonoBehaviour
 
     private void OnDisable()
     {
-        // Detiene cualquier coroutine de lifetime cuando la bala vuelve al pool
         if (_lifeCoroutine != null)
         {
             StopCoroutine(_lifeCoroutine);
@@ -28,20 +27,12 @@ public class OrbProjectile : MonoBehaviour
         _rb.linearVelocity = Vector2.zero;
     }
 
-    // ── API pública ───────────────────────────────────────────────────────────
-
-    /// <summary>
-    /// Inicializa la bala al sacarla del pool.
-    /// PlayerShooter debe llamar a este método inmediatamente después de BulletPool.Get().
-    /// </summary>
     public void Launch(Vector2 direction, BulletPool pool)
     {
         _pool = pool;
         _rb.linearVelocity = direction.normalized * speed;
         _lifeCoroutine = StartCoroutine(ReturnAfterLifetime());
     }
-
-    // ── Colisión ──────────────────────────────────────────────────────────────
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,8 +45,6 @@ public class OrbProjectile : MonoBehaviour
 
         ReturnToPool();
     }
-
-    // ── Helpers ───────────────────────────────────────────────────────────────
 
     private IEnumerator ReturnAfterLifetime()
     {
@@ -73,6 +62,6 @@ public class OrbProjectile : MonoBehaviour
         if (_pool != null)
             _pool.Return(gameObject);
         else
-            gameObject.SetActive(false);   // fallback si no hay pool asignado
+            gameObject.SetActive(false);
     }
 }

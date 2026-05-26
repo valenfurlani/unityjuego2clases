@@ -1,13 +1,7 @@
 using UnityEngine;
 
-/// <summary>
-/// Responsabilidad única: escuchar la muerte del jugador y parar el timer.
-/// Conecta el evento OnDeath del componente Health con el GameTimer.
-/// Principio de Inversión de Dependencias: habla con GameTimer, no con la UI.
-/// </summary>
 public class PlayerDeathTimerStopper : MonoBehaviour
 {
-    [Header("Referencias")]
     [SerializeField] private Health playerHealth;
     [SerializeField] private GameTimer gameTimer;
 

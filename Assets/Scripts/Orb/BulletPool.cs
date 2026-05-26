@@ -2,10 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Responsabilidad única: gestionar instancias reciclables del proyectil del jugador.
-/// Las balas se devuelven solas al pool al expirar su lifetime o al impactar.
-/// </summary>
 public class BulletPool : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
@@ -23,11 +19,6 @@ public class BulletPool : MonoBehaviour
             _inactive.Enqueue(CreateNew());
     }
 
-    // ── API pública ───────────────────────────────────────────────────────────
-
-    /// <summary>
-    /// Saca una bala del pool, la posiciona y la activa.
-    /// </summary>
     public GameObject Get(Vector3 position)
     {
         GameObject bullet = _inactive.Count > 0
@@ -40,9 +31,6 @@ public class BulletPool : MonoBehaviour
         return bullet;
     }
 
-    /// <summary>
-    /// Devuelve una bala al pool. OrbProjectile lo llama internamente.
-    /// </summary>
     public void Return(GameObject bullet)
     {
         if (bullet == null) return;
@@ -50,8 +38,6 @@ public class BulletPool : MonoBehaviour
         bullet.transform.SetParent(_poolParent);
         _inactive.Enqueue(bullet);
     }
-
-    // ── Privado ───────────────────────────────────────────────────────────────
 
     private GameObject CreateNew()
     {

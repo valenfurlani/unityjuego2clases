@@ -78,7 +78,6 @@ public class AutomaticShooter : MonoBehaviour
         Vector2 direction = ((Vector2)target.position - (Vector2)transform.position).normalized;
         Vector3 spawnPos = transform.position + (Vector3)(direction * 0.6f);
         
-        // Obtenemos la bala del pool en lugar de instanciarla
         GameObject orb = bulletPool.Get(spawnPos);
         OrbProjectile projectile = orb.GetComponent<OrbProjectile>();
         projectile?.Launch(direction, bulletPool);

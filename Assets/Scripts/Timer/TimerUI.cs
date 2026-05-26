@@ -1,11 +1,6 @@
 using TMPro;
 using UnityEngine;
 
-/// <summary>
-/// Responsabilidad única: mostrar el tiempo en pantalla.
-/// Implementa ITimerObserver para recibir actualizaciones sin acoplarse a GameTimer directamente.
-/// Principio Abierto/Cerrado: GameTimer no necesita cambiar para agregar esta UI.
-/// </summary>
 public class TimerUI : MonoBehaviour, ITimerObserver
 {
     [Header("Referencias")]
@@ -13,7 +8,6 @@ public class TimerUI : MonoBehaviour, ITimerObserver
     [SerializeField] private TextMeshProUGUI timerText;
 
     [Header("Formato")]
-    [Tooltip("Formato de tiempo: 'mm:ss' o 'ss.ff'")]
     [SerializeField] private TimerDisplayFormat displayFormat = TimerDisplayFormat.MinutesSeconds;
 
     private void OnEnable()
@@ -28,8 +22,6 @@ public class TimerUI : MonoBehaviour, ITimerObserver
             gameTimer.UnregisterObserver(this);
     }
 
-    // ── ITimerObserver ────────────────────────────────────────────────────────
-
     public void OnTimerUpdated(float elapsedSeconds)
     {
         UpdateDisplay(elapsedSeconds);
@@ -38,12 +30,9 @@ public class TimerUI : MonoBehaviour, ITimerObserver
     public void OnTimerStopped(float finalSeconds)
     {
         UpdateDisplay(finalSeconds);
-        // Opcional: cambiar color para indicar que el timer está detenido
         if (timerText != null)
-            timerText.color = new Color(1f, 0.3f, 0.3f); // rojo al morir
+            timerText.color = new Color(1f, 0.3f, 0.3f);
     }
-
-    // ── Helpers ───────────────────────────────────────────────────────────────
 
     private void UpdateDisplay(float seconds)
     {

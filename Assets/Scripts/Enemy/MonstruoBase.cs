@@ -72,7 +72,7 @@ public abstract class MonstruoBase : MonoBehaviour, IDamageDealer
         if (agent != null) agent.speed = currentSpeed;
 
         Health health = GetComponent<Health>();
-        if (health != null) health.SetMaxHealth(data.health);  // vida desde el SO
+        if (health != null) health.SetMaxHealth(data.health);
 
         ResetState();
     }
