@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterDataSO
   monsterName: Charger
   health: 40
-  speed: 90
-  damage: 30
+  speed: 7
+  damage: 1
   prefab: {fileID: 5398163655935206747, guid: 4f3e6a2dcaecfc24ab937d992a3cd959, type: 3}
   deathSound: {fileID: 0}
   minFearRequired: 25

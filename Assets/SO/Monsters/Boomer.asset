@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Boomer
   m_EditorClassIdentifier: Assembly-CSharp::MonsterDataSO
   monsterName: Boomer
-  health: 1
-  speed: 50
-  damage: 50
+  health: 3
+  speed: 3
+  damage: 4
   prefab: {fileID: 2011014144561331183, guid: 390d80608b45185479b39caa3a4d74d1, type: 3}
   deathSound: {fileID: 0}
   minFearRequired: 50

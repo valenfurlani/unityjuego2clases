@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraConfigSO
   rangeConfigs:
   - shakeForce: 0
-    shakeInterval: 0
-    zoomOffset: 0
+    breatheAmplitude: 0
+    breatheSpeed: 0
   - shakeForce: 0.2
-    shakeInterval: 1
-    zoomOffset: -1
-  - shakeForce: 0.6
-    shakeInterval: 1
-    zoomOffset: -2
+    breatheAmplitude: 0.3
+    breatheSpeed: 0.4
+  - shakeForce: 0.5
+    breatheAmplitude: 0.6
+    breatheSpeed: 0.8
   - shakeForce: 1
-    shakeInterval: 0.5
-    zoomOffset: -4
+    breatheAmplitude: 1
+    breatheSpeed: 1.4
