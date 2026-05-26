@@ -1,39 +1,78 @@
+using System.Collections;
 using UnityEngine;
 
 public class OrbProjectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float speed    = 10f;
     [SerializeField] private float lifeTime = 3f;
-    
-    private Rigidbody2D rb;
-    private IDamageDealer damageDealer;
 
-    void Awake()
+    private Rigidbody2D  _rb;
+    private IDamageDealer _damageDealer;
+    private BulletPool   _pool;
+    private Coroutine    _lifeCoroutine;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        damageDealer = GetComponent<IDamageDealer>();
+        _rb           = GetComponent<Rigidbody2D>();
+        _damageDealer = GetComponent<IDamageDealer>();
     }
 
-    void Start()
+    private void OnDisable()
     {
-        Destroy(gameObject, lifeTime);
+        // Detiene cualquier coroutine de lifetime cuando la bala vuelve al pool
+        if (_lifeCoroutine != null)
+        {
+            StopCoroutine(_lifeCoroutine);
+            _lifeCoroutine = null;
+        }
+        _rb.linearVelocity = Vector2.zero;
     }
 
-    // Método para inicializar la dirección desde el script del jugador
-    public void Launch(Vector2 direction)
+    // ── API pública ───────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Inicializa la bala al sacarla del pool.
+    /// PlayerShooter debe llamar a este método inmediatamente después de BulletPool.Get().
+    /// </summary>
+    public void Launch(Vector2 direction, BulletPool pool)
     {
-        rb.linearVelocity = direction.normalized * speed;
+        _pool = pool;
+        _rb.linearVelocity = direction.normalized * speed;
+        _lifeCoroutine = StartCoroutine(ReturnAfterLifetime());
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    // ── Colisión ──────────────────────────────────────────────────────────────
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         MonstruoBase enemy = collision.GetComponentInParent<MonstruoBase>();
         if (enemy == null) return;
 
         Health targetHealth = enemy.GetComponent<Health>();
-        if (targetHealth != null && damageDealer != null)
-            targetHealth.TakeDamage(damageDealer.GetDamage());
+        if (targetHealth != null && _damageDealer != null)
+            targetHealth.TakeDamage(_damageDealer.GetDamage());
 
-        Destroy(gameObject);
+        ReturnToPool();
+    }
+
+    // ── Helpers ───────────────────────────────────────────────────────────────
+
+    private IEnumerator ReturnAfterLifetime()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        ReturnToPool();
+    }
+
+    private void OnBecameInvisible()
+    {
+        ReturnToPool();
+    }
+
+    private void ReturnToPool()
+    {
+        if (_pool != null)
+            _pool.Return(gameObject);
+        else
+            gameObject.SetActive(false);   // fallback si no hay pool asignado
     }
 }

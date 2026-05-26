@@ -21,11 +21,7 @@ public class FearOnDamageTaken : MonoBehaviour
 
     private void OnEnable()
     {
-        if (playerHealth == null)
-        {
-            Debug.LogError("[FearOnDamageTaken] Falta asignar el componente Health del jugador.");
-            return;
-        }
+        if (playerHealth == null) return;
         playerHealth.OnDamageTaken.AddListener(HandleDamageTaken);
     }
 

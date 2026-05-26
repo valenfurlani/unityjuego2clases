@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463a2fb919ef48a4493d42e3f37b4bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPathfinder
-  spawnDuration: 1.5
+  spawnDuration: 0.5
   attackRange: 1.5
   attackCooldown: 2
   attackDuration: 0.6

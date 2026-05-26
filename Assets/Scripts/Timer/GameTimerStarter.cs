@@ -10,12 +10,7 @@ public class GameTimerStarter : MonoBehaviour
 
     private void Start()
     {
-        if (gameTimer == null)
-        {
-            Debug.LogError($"[GameTimerStarter] Falta asignar el GameTimer en {gameObject.name}");
-            return;
-        }
-
+        if (gameTimer == null) return;
         gameTimer.StartTimer();
     }
 }

@@ -158,7 +158,6 @@ public class MonsterSpawnerFactory : MonoBehaviour, IMonsterFactory, IFearObserv
                 return hit.position;
         }
 
-        Debug.LogWarning("[MonsterSpawnerFactory] No se encontró posición válida en el NavMesh.");
         return Vector3.negativeInfinity;
     }
 }

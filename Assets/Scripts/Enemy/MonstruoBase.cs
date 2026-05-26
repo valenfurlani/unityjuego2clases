@@ -67,12 +67,12 @@ public abstract class MonstruoBase : MonoBehaviour, IDamageDealer
 
     public virtual void Initialize(MonsterDataSO data)
     {
-        currentSpeed = data.speed;
+        currentSpeed  = data.speed;
         monsterDamage = data.damage;
         if (agent != null) agent.speed = currentSpeed;
 
         Health health = GetComponent<Health>();
-        health?.ResetHealth();
+        if (health != null) health.SetMaxHealth(data.health);  // vida desde el SO
 
         ResetState();
     }

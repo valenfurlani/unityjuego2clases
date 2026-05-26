@@ -13,18 +13,7 @@ public class PlayerDeathTimerStopper : MonoBehaviour
 
     private void OnEnable()
     {
-        if (playerHealth == null)
-        {
-            Debug.LogError($"[PlayerDeathTimerStopper] Falta asignar el componente Health en {gameObject.name}");
-            return;
-        }
-
-        if (gameTimer == null)
-        {
-            Debug.LogError($"[PlayerDeathTimerStopper] Falta asignar el GameTimer en {gameObject.name}");
-            return;
-        }
-
+        if (playerHealth == null || gameTimer == null) return;
         playerHealth.OnDeath.AddListener(HandlePlayerDeath);
     }
 

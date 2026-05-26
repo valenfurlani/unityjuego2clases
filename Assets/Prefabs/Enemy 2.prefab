@@ -85,10 +85,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35e1a4fd599dd94e874da44b4a31fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DashEnemy
-  spawnDuration: 1.5
-  attackRange: 1.5
+  spawnDuration: 0.5
+  attackRange: 0.5
   attackCooldown: 2
   attackDuration: 0.6
-  dashInterval: 3
-  dashForce: 18
-  dashDuration: 0.25
+  dashInterval: 5
+  dashForce: 5
+  dashDuration: 0.5

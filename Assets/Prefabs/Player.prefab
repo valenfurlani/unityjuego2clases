@@ -13,13 +13,13 @@ GameObject:
   - component: {fileID: 7430200168071562382}
   - component: {fileID: 7738863770534130809}
   - component: {fileID: 2430287278312427240}
-  - component: {fileID: 3858387919703022882}
   - component: {fileID: 102290836465738961}
   - component: {fileID: 4211175687211536785}
   - component: {fileID: 1258690848078450107}
   - component: {fileID: 7437166633422997040}
   - component: {fileID: 8147974021786662252}
   - component: {fileID: 5965138139211197211}
+  - component: {fileID: 3187616940816903259}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -145,20 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211a77d1e0f78ec419424dd9fc455a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
---- !u!114 &3858387919703022882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642246334018066472}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f95620c586fa7d84c8f77a3c8c5e10bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerShooter
-  projectilePrefab: {fileID: 1054485973100634700, guid: b93347655aaa10c41bbd769e80280902, type: 3}
-  firePoint: {fileID: 8434057102811204809}
 --- !u!50 &102290836465738961
 Rigidbody2D:
   serializedVersion: 5
@@ -389,8 +375,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AutomaticShooter
   detectionRadius: 5
   fireRate: 0.3
-  orbPrefab: {fileID: 1054485973100634700, guid: b93347655aaa10c41bbd769e80280902, type: 3}
+  bulletPool: {fileID: 3187616940816903259}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
   rangeColor: {r: 1, g: 1, b: 1, a: 0.14901961}
+--- !u!114 &3187616940816903259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642246334018066472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668f445a48720b84e854e1267530c8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletPool
+  bulletPrefab: {fileID: 1054485973100634700, guid: b93347655aaa10c41bbd769e80280902, type: 3}
+  preloadCount: 10

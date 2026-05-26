@@ -4,7 +4,7 @@ public class AutomaticShooter : MonoBehaviour
 {
     [SerializeField] private float detectionRadius = 5f;
     [SerializeField] private float fireRate = 0.8f;
-    [SerializeField] private GameObject orbPrefab;
+    [SerializeField] private BulletPool bulletPool;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Color rangeColor = new Color(0.4f, 0.85f, 1f, 0.45f);
 
@@ -73,12 +73,14 @@ public class AutomaticShooter : MonoBehaviour
 
     private void FireAt(Transform target)
     {
-        if (orbPrefab == null) return;
+        if (bulletPool == null) return;
 
         Vector2 direction = ((Vector2)target.position - (Vector2)transform.position).normalized;
         Vector3 spawnPos = transform.position + (Vector3)(direction * 0.6f);
-        GameObject orb = Instantiate(orbPrefab, spawnPos, Quaternion.identity);
+        
+        // Obtenemos la bala del pool en lugar de instanciarla
+        GameObject orb = bulletPool.Get(spawnPos);
         OrbProjectile projectile = orb.GetComponent<OrbProjectile>();
-        projectile?.Launch(direction);
+        projectile?.Launch(direction, bulletPool);
     }
 }

@@ -18,12 +18,7 @@ public class TimerUI : MonoBehaviour, ITimerObserver
 
     private void OnEnable()
     {
-        if (gameTimer == null)
-        {
-            Debug.LogError($"[TimerUI] Falta asignar el GameTimer en {gameObject.name}");
-            return;
-        }
-
+        if (gameTimer == null) return;
         gameTimer.RegisterObserver(this);
     }
 
