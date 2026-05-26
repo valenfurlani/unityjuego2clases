@@ -12,9 +12,36 @@ public class Health : MonoBehaviour
     public UnityEvent<float> OnDamageTaken;
     public UnityEvent OnDeath;
 
+    private System.Collections.Generic.List<IHealthObserver> observers = new System.Collections.Generic.List<IHealthObserver>();
+
+    public void RegisterObserver(IHealthObserver observer)
+    {
+        if (!observers.Contains(observer))
+            observers.Add(observer);
+    }
+
+    public void UnregisterObserver(IHealthObserver observer)
+    {
+        if (observers.Contains(observer))
+            observers.Remove(observer);
+    }
+
+    private void NotifyObservers()
+    {
+        foreach (var observer in observers)
+        {
+            observer.OnHealthChanged(currentHealth, maxHealth);
+        }
+    }
+
     void Awake()
     {
         currentHealth = maxHealth;
+    }
+
+    private void Start()
+    {
+        NotifyObservers();
     }
 
     public void TakeDamage(float amount)
@@ -23,6 +50,7 @@ public class Health : MonoBehaviour
 
         currentHealth -= amount;
         OnDamageTaken?.Invoke(amount);
+        NotifyObservers();
 
         if (currentHealth <= 0)
             Die();
@@ -31,12 +59,14 @@ public class Health : MonoBehaviour
     public void ResetHealth()
     {
         currentHealth = maxHealth;
+        NotifyObservers();
     }
 
     public void SetMaxHealth(float newMaxHealth)
     {
         maxHealth     = newMaxHealth;
         currentHealth = newMaxHealth;
+        NotifyObservers();
     }
 
     [ContextMenu("[TEST] Forzar muerte")]
@@ -44,6 +74,7 @@ public class Health : MonoBehaviour
     {
         if (currentHealth <= 0) return;
         currentHealth = 0;
+        NotifyObservers();
         Die();
     }
 
