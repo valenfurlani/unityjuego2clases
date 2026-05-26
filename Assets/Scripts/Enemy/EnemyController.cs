@@ -10,6 +10,12 @@ public class EnemyController : MonstruoBase
     private bool isAttacking = false;
     private float nextAttackTime = 0f;
 
+    protected override void ResetState()
+    {
+        isAttacking = false;
+        nextAttackTime = 0f;
+    }
+
     protected override void Update()
     {
         base.Update();

@@ -16,6 +16,14 @@ public class DashEnemy : MonstruoBase
     private float nextDashTime = 0f;
     private Vector2 dashDirection;
 
+    protected override void ResetState()
+    {
+        isAttacking = false;
+        isDashing = false;
+        nextAttackTime = 0f;
+        nextDashTime = 0f;
+    }
+
     protected override void Update()
     {
         base.Update();

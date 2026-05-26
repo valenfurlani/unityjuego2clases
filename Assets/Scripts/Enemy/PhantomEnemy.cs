@@ -12,6 +12,20 @@ public class PhantomEnemy : MonstruoBase
     private bool isAttacking = false;
     private bool isPhantom = true;
     private float nextAttackTime = 0f;
+
+    protected override void ResetState()
+    {
+        isAttacking = false;
+        isPhantom = true;
+        nextAttackTime = 0f;
+        if (spriteRenderer != null)
+        {
+            Color c = spriteRenderer.color;
+            c.a = phantomAlpha;
+            spriteRenderer.color = c;
+        }
+        if (bodyCollider != null) bodyCollider.enabled = false;
+    }
     private SpriteRenderer spriteRenderer;
     private Collider2D bodyCollider;
 

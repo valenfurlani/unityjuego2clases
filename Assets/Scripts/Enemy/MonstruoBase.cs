@@ -17,6 +17,8 @@ public abstract class MonstruoBase : MonoBehaviour, IDamageDealer
     [SerializeField] protected float spawnDuration = 1.5f;
     protected bool isSpawning = true;
 
+    private bool isFirstEnable = true;
+
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -25,10 +27,30 @@ public abstract class MonstruoBase : MonoBehaviour, IDamageDealer
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.updatePosition = false;
+
+        Health health = GetComponent<Health>();
+        if (health != null) health.OnDeath.AddListener(OnDie);
+    }
+
+    protected virtual void OnEnable()
+    {
+        if (isFirstEnable)
+        {
+            isFirstEnable = false;
+            return;
+        }
+
+        ActivateEnemy();
     }
 
     protected virtual void Start()
     {
+        ActivateEnemy();
+    }
+
+    private void ActivateEnemy()
+    {
+        isSpawning = true;
         LocatePlayer();
         StartCoroutine(SpawnSequence());
     }
@@ -48,11 +70,24 @@ public abstract class MonstruoBase : MonoBehaviour, IDamageDealer
         currentSpeed = data.speed;
         monsterDamage = data.damage;
         if (agent != null) agent.speed = currentSpeed;
+
+        Health health = GetComponent<Health>();
+        health?.ResetHealth();
+
+        ResetState();
     }
+
+    protected virtual void ResetState() { }
 
     protected abstract void HandlePhysics();
 
     public float GetDamage() => monsterDamage;
+
+    protected virtual void OnDie()
+    {
+        StopAllCoroutines();
+        gameObject.SetActive(false);
+    }
 
     protected void LocatePlayer()
     {

@@ -27,9 +27,10 @@ public class OrbProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<MonstruoBase>() == null) return;
+        MonstruoBase enemy = collision.GetComponentInParent<MonstruoBase>();
+        if (enemy == null) return;
 
-        Health targetHealth = collision.GetComponent<Health>();
+        Health targetHealth = enemy.GetComponent<Health>();
         if (targetHealth != null && damageDealer != null)
             targetHealth.TakeDamage(damageDealer.GetDamage());
 
