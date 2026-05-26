@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636508196f9d5d44f8d3cb14c7d9a287, type: 3}
+  m_Name: AudioConfig
+  m_EditorClassIdentifier: Assembly-CSharp::AudioConfigSO
+  rangeConfigs:
+  - musicClip: {fileID: 8300000, guid: c14a1a66d1bad0641ac30810b1f9f812, type: 3}
+    mixerVolumeParam: 
+    transitionDuration: 2
+  - musicClip: {fileID: 8300000, guid: dfd00d4fe207f104eb1acd971d520e37, type: 3}
+    mixerVolumeParam: 
+    transitionDuration: 2
+  - musicClip: {fileID: 8300000, guid: b8c2b35dbfaa5d94dad0b8b228eb5c3f, type: 3}
+    mixerVolumeParam: 
+    transitionDuration: 2
+  - musicClip: {fileID: 8300000, guid: b8c2b35dbfaa5d94dad0b8b228eb5c3f, type: 3}
+    mixerVolumeParam: 
+    transitionDuration: 2
