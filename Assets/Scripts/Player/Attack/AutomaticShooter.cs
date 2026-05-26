@@ -7,6 +7,8 @@ public class AutomaticShooter : MonoBehaviour
     [SerializeField] private BulletPool bulletPool;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Color rangeColor = new Color(0.4f, 0.85f, 1f, 0.45f);
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip fireClip;
 
     private float nextFireTime = 0f;
     private LineRenderer lineRenderer;
@@ -81,5 +83,8 @@ public class AutomaticShooter : MonoBehaviour
         GameObject orb = bulletPool.Get(spawnPos);
         OrbProjectile projectile = orb.GetComponent<OrbProjectile>();
         projectile?.Launch(direction, bulletPool);
+
+        if (sfxSource != null && fireClip != null)
+            sfxSource.PlayOneShot(fireClip);
     }
 }

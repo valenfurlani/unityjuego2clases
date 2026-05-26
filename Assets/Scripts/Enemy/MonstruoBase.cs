@@ -13,6 +13,7 @@ public abstract class MonstruoBase : MonoBehaviour, IDamageDealer
     protected Animator animator;
     protected float currentSpeed;
     protected float monsterDamage;
+    private AudioClip deathSound;
 
     [SerializeField] protected float spawnDuration = 1.5f;
     protected bool isSpawning = true;
@@ -69,6 +70,7 @@ public abstract class MonstruoBase : MonoBehaviour, IDamageDealer
     {
         currentSpeed  = data.speed;
         monsterDamage = data.damage;
+        deathSound    = data.deathSound;
         if (agent != null) agent.speed = currentSpeed;
 
         Health health = GetComponent<Health>();
@@ -85,6 +87,9 @@ public abstract class MonstruoBase : MonoBehaviour, IDamageDealer
 
     protected virtual void OnDie()
     {
+        if (deathSound != null)
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+
         StopAllCoroutines();
         gameObject.SetActive(false);
     }

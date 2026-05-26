@@ -14,14 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioConfigSO
   rangeConfigs:
   - musicClip: {fileID: 8300000, guid: c14a1a66d1bad0641ac30810b1f9f812, type: 3}
-    mixerVolumeParam: 
-    transitionDuration: 2
+    transitionDuration: 0
   - musicClip: {fileID: 8300000, guid: dfd00d4fe207f104eb1acd971d520e37, type: 3}
-    mixerVolumeParam: 
-    transitionDuration: 2
+    transitionDuration: 0
   - musicClip: {fileID: 8300000, guid: b8c2b35dbfaa5d94dad0b8b228eb5c3f, type: 3}
-    mixerVolumeParam: 
-    transitionDuration: 2
+    transitionDuration: 0
   - musicClip: {fileID: 8300000, guid: b8c2b35dbfaa5d94dad0b8b228eb5c3f, type: 3}
-    mixerVolumeParam: 
-    transitionDuration: 2
+    transitionDuration: 0

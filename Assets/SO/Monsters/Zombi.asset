@@ -17,6 +17,6 @@ MonoBehaviour:
   speed: 2
   damage: 2
   prefab: {fileID: 3939792567453200390, guid: 2b146dd03300cba4f9e4e7ab6b115364, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 241ab6c09a70c0941b9c23c2483ca99e, type: 3}
   minFearRequired: 0
   spawnWeight: 1

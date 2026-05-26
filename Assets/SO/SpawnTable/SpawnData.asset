@@ -16,3 +16,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 164d1b19a08941443b83a141b1dacc58, type: 2}
   - {fileID: 11400000, guid: 4c7c1f7a29b6738489b955f423d58746, type: 2}
   - {fileID: 11400000, guid: 28ba511a5bbba674bb0a0354e4b473a4, type: 2}
+  maxEnemiesPerRange: 04000000080000000c00000010000000

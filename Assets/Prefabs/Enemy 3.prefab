@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5a5cfbbd2ac2943bb722d213864343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhantomEnemy
-  spawnDuration: 1.5
-  visibilityRange: 5
-  phantomAlpha: 0.15
+  spawnDuration: 0.5
+  visibilityRange: 3
+  phantomAlpha: 0.3
   attackRange: 1.5
   attackCooldown: 2
   attackDuration: 0.6

@@ -4,7 +4,6 @@ using UnityEngine;
 public class AudioRangeConfig
 {
     public AudioClip musicClip;
-    public string mixerVolumeParam;
     public float transitionDuration;
 }
 

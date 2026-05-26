@@ -89,7 +89,7 @@ AudioMixerController:
   - guid: f413579014eb0d0419be96c8c53b0da1
     name: Track3_IntenseVol
   - guid: 903ab5bab733da543a938afcae4861ae
-    name: MyExposedParam 3
+    name: Track4_Chaos_Vol
   m_AudioMixerGroupViews:
   - guids:
     - fc18c95e52e65c940b59a302738f0074
@@ -147,7 +147,11 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: ae03800ef16add2469a3e033007be212
   m_FloatValues:
+    f413579014eb0d0419be96c8c53b0da1: 2.090601
     a8305b55d4365684883da555c904c496: 0
+    2c4891c7b8549bf4d977976f05076c0c: 0.44
+    c61d6f790fb14684bb69d7b493f4c853: 0.64345783
+    903ab5bab733da543a938afcae4861ae: 4.648096
   m_TransitionOverrides: {}
 --- !u!243 &3897365049082187597
 AudioMixerGroupController:
