@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterDataSO
   monsterName: Zombi
   health: 50
-  speed: 20
+  speed: 2
   damage: 8
   prefab: {fileID: 3939792567453200390, guid: 2b146dd03300cba4f9e4e7ab6b115364, type: 3}
   deathSound: {fileID: 0}

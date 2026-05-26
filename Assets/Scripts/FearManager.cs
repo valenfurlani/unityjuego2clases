@@ -37,6 +37,15 @@ public class FearManager : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Notifica el nivel de miedo inicial a todos los observers al arrancar la escena,
+    /// sin necesitar un cambio de valor para disparar el primer spawn.
+    /// </summary>
+    private void Start()
+    {
+        NotifyObservers();
+    }
+
     // For manual slider testing or UI
     public void SetFearFromSlider(float value)
     {
