@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95620c586fa7d84c8f77a3c8c5e10bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShooter
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 1054485973100634700, guid: b93347655aaa10c41bbd769e80280902, type: 3}
+  firePoint: {fileID: 8434057102811204809}
 --- !u!50 &102290836465738961
 Rigidbody2D:
   serializedVersion: 5

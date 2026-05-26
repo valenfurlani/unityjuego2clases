@@ -27,16 +27,12 @@ public class OrbProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Intentamos obtener el componente de vida del objeto con el que chocamos
+        if (collision.GetComponent<MonstruoBase>() == null) return;
+
         Health targetHealth = collision.GetComponent<Health>();
-
         if (targetHealth != null && damageDealer != null)
-        {
-            // Aplicamos el daño de forma limpia
             targetHealth.TakeDamage(damageDealer.GetDamage());
-        }
 
-        // El proyectil se destruye al impactar con cualquier superficie sólida o entidad
         Destroy(gameObject);
-    } 
+    }
 }

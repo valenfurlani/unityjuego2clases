@@ -24,7 +24,7 @@ public class MonsterSpawnerFactory : MonoBehaviour, IMonsterFactory, IFearObserv
             GameObject instance = Instantiate(data.prefab, position, Quaternion.identity);
         
             // 2. Obtener el controlador del enemigo inyectarle sus datos correspondientes
-            EnemyController controller = instance.GetComponent<EnemyController>();
+            MonstruoBase controller = instance.GetComponent<MonstruoBase>();
             if (controller != null)
             {
                 controller.Initialize(data);

@@ -6,11 +6,9 @@ public class PostProcessingSystem : MonoBehaviour, IFearObserver
 {
     [SerializeField] private FearManager fearManager;
     [SerializeField] private Volume globalVolume;
+    [SerializeField] private FearConfigSO fearConfig;
+    [SerializeField] private PostProcessingConfigSO ppConfig;
 
-    [SerializeField] private float maxAberration = 1f;
-    [SerializeField] private float minSaturation = -80f;
-    [SerializeField] private float maxContrast = 40f;
-    
     private ChromaticAberration chromaticAberration;
     private ColorAdjustments colorAdjustments;
 
@@ -35,17 +33,20 @@ public class PostProcessingSystem : MonoBehaviour, IFearObserver
 
     public void OnFearLevelChanged(int fearLevel)
     {
-        float normalizedFear = Mathf.Clamp01(fearLevel / 100f);
+        if (fearConfig == null || ppConfig == null) return;
+
+        int index = fearConfig.GetRangeIndex(fearLevel);
+        if (index >= ppConfig.rangeConfigs.Length) return;
+
+        PostProcessingRangeConfig config = ppConfig.rangeConfigs[index];
 
         if (chromaticAberration != null)
-        {
-            chromaticAberration.intensity.value = normalizedFear * maxAberration;
-        }
+            chromaticAberration.intensity.value = config.aberrationIntensity;
 
         if (colorAdjustments != null)
         {
-            colorAdjustments.saturation.value = Mathf.Lerp(0f, minSaturation, normalizedFear);
-            colorAdjustments.contrast.value = Mathf.Lerp(0f, maxContrast, normalizedFear);
+            colorAdjustments.saturation.value = config.saturation;
+            colorAdjustments.contrast.value = config.contrast;
         }
     }
 }

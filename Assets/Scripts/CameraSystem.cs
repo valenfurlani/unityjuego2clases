@@ -5,6 +5,17 @@ public class CameraSystem : MonoBehaviour, IFearObserver
 {
     [SerializeField] private FearManager fearManager;
     [SerializeField] private CinemachineImpulseSource impulseSource;
+    [SerializeField] private CinemachineCamera virtualCamera;
+    [SerializeField] private FearConfigSO fearConfig;
+    [SerializeField] private CameraConfigSO cameraConfig;
+
+    private float baseOrthoSize;
+
+    private void Awake()
+    {
+        if (virtualCamera != null)
+            baseOrthoSize = virtualCamera.Lens.OrthographicSize;
+    }
 
     private void OnEnable()
     {
@@ -18,15 +29,21 @@ public class CameraSystem : MonoBehaviour, IFearObserver
 
     public void OnFearLevelChanged(int fearLevel)
     {
-        if (fearLevel > 25)
-        {
-            TriggerShake(fearLevel);
-        }
-    }
+        if (fearConfig == null || cameraConfig == null) return;
 
-    private void TriggerShake(int fearLevel)
-    {
-        float intensity = fearLevel / 100f;
-        impulseSource.GenerateImpulseWithForce(intensity);
+        int index = fearConfig.GetRangeIndex(fearLevel);
+        if (index >= cameraConfig.rangeConfigs.Length) return;
+
+        CameraRangeConfig config = cameraConfig.rangeConfigs[index];
+
+        if (config.shakeForce > 0 && impulseSource != null)
+            impulseSource.GenerateImpulseWithForce(config.shakeForce);
+
+        if (virtualCamera != null)
+        {
+            var lens = virtualCamera.Lens;
+            lens.OrthographicSize = baseOrthoSize + config.zoomOffset;
+            virtualCamera.Lens = lens;
+        }
     }
 }

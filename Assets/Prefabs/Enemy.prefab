@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 487276031548106577}
   - component: {fileID: 6482750435967853577}
   - component: {fileID: 819293371999830163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,11 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463a2fb919ef48a4493d42e3f37b4bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPathfinder
+  spawnDuration: 1.5
   attackRange: 1.5
   attackCooldown: 2
-  spawnDuration: 1.5
   attackDuration: 0.6
-  fearDealtOnHit: 15
 --- !u!114 &6395381793581121813
 MonoBehaviour:
   m_ObjectHideFlags: 0
