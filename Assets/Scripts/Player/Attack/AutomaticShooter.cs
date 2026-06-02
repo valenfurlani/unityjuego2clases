@@ -3,44 +3,14 @@ using UnityEngine;
 public class AutomaticShooter : MonoBehaviour
 {
     [SerializeField] private float detectionRadius = 5f;
+    public float DetectionRadius => detectionRadius;
     [SerializeField] private float fireRate = 0.8f;
     [SerializeField] private BulletPool bulletPool;
     [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private Color rangeColor = new Color(0.4f, 0.85f, 1f, 0.45f);
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioClip fireClip;
 
     private float nextFireTime = 0f;
-    private LineRenderer lineRenderer;
-    private const int circleSegments = 80;
-
-    private void Awake()
-    {
-        SetupRangeIndicator();
-    }
-
-    private void SetupRangeIndicator()
-    {
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.loop = true;
-        lineRenderer.positionCount = circleSegments;
-        lineRenderer.useWorldSpace = false;
-        lineRenderer.startWidth = 0.06f;
-        lineRenderer.endWidth = 0.06f;
-        lineRenderer.sortingOrder = 10;
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = rangeColor;
-        lineRenderer.endColor = rangeColor;
-
-        for (int i = 0; i < circleSegments; i++)
-        {
-            float angle = (float)i / circleSegments * Mathf.PI * 2f;
-            lineRenderer.SetPosition(i, new Vector3(
-                Mathf.Cos(angle) * detectionRadius,
-                Mathf.Sin(angle) * detectionRadius,
-                0f));
-        }
-    }
 
     private void Update()
     {
